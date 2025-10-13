@@ -1,0 +1,66 @@
+# config/constants.py
+"""ゲーム全体で使用する定数定義"""
+
+# --- 画面設定 ---
+SCREEN_WIDTH = 256
+SCREEN_HEIGHT = 240
+
+# --- カードサイズ ---
+# 手札・山札用カードサイズ
+SMALL_CARD_WIDTH = 20
+SMALL_CARD_HEIGHT = 32
+
+# ボード用カードサイズ
+LARGE_CARD_WIDTH = 32
+LARGE_CARD_HEIGHT = 53
+
+# --- ボードレイアウト ---
+# 6x2列のボードレイアウト
+BOARD_X_START = 15
+BOARD_Y_START = 60
+BOARD_X_MARGIN = 37
+BOARD_Y_MARGIN = 60
+
+def get_board_positions():
+    """ボード上の12位置の座標を計算して返す"""
+    return [
+        (BOARD_X_START + (i % 6) * BOARD_X_MARGIN, 
+         BOARD_Y_START + (i // 6) * BOARD_Y_MARGIN) 
+        for i in range(12)
+    ]
+
+# --- プレイヤー設定 ---
+PLAYER_COLORS = [12, 8]  # 青, 赤
+
+# --- ボタンサイズ ---
+PASS_BUTTON_WIDTH = 30
+PASS_BUTTON_HEIGHT = 16
+PASS_BUTTON_MARGIN_X = 10
+
+ATTACK_BUTTON_WIDTH = 40
+ATTACK_BUTTON_HEIGHT = 16
+ATTACK_BUTTON_MARGIN_X = 5
+
+YAKU_BUTTON_WIDTH = 30
+YAKU_BUTTON_HEIGHT = 16
+YAKU_BUTTON_MARGIN_X = 5
+
+COUNTER_BUTTON_WIDTH = 50
+COUNTER_BUTTON_HEIGHT = 16
+COUNTER_BUTTON_MARGIN_X = 5
+
+# --- ゲーム設定 ---
+MAX_ROUNDS = 12
+INITIAL_HAND_SIZE = 6
+
+# ステージ名
+STAGE_NAMES = [
+    "MATSU-NO-JIN", "UME-NO-JIN", "SAKURA-NO-JIN", "FUJI-NO-JIN",
+    "AYAME-NO-JIN", "BOTAN-NO-JIN", "HAGI-NO-JIN", "SUSUKI-NO-JIN",
+    "KIKU-NO-JIN", "MOMIJI-NO-JIN", "YANAGI-NO-JIN", "KIRI-NO-JIN"
+]
+
+# COUNTERボタン
+COUNTER_BUTTON_WIDTH = 50
+COUNTER_BUTTON_HEIGHT = 16
+COUNTER_BUTTON_MARGIN_X = 5
